@@ -1,0 +1,74 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'atman' on host 'laptop-u41e30rv' (Windows NT_amd64 version 6.2) on Sat Apr 09 11:07:34 -0400 2022
+INFO: [HLS 200-10] In directory 'C:/Vivado_HLS_Tutorial/hls_design2/architecture_exploration'
+INFO: [HLS 200-10] Opening project 'C:/Vivado_HLS_Tutorial/hls_design2/architecture_exploration/hls_mmult_prj'.
+INFO: [HLS 200-10] Adding design file 'mmult_accel.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mmult_test.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Vivado_HLS_Tutorial/hls_design2/architecture_exploration/hls_mmult_prj/solution4'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'mmult_accel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 103.602 ; gain = 19.047
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 103.602 ; gain = 19.047
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 104.449 ; gain = 19.895
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 104.703 ; gain = 20.148
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L1' (mmult_accel.cpp:16) in function 'mmult_hw' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'L2' (mmult_accel.cpp:17) in function 'mmult_hw' completely with a factor of 7.
+INFO: [HLS 200-489] Unrolling loop 'L3' (mmult_accel.cpp:21) in function 'mmult_hw' completely with a factor of 7.
+INFO: [XFORM 203-131] Reshaping array 'b' (mmult_accel.cpp:11) in dimension 1 completely.
+INFO: [XFORM 203-131] Reshaping array 'b' (mmult_accel.cpp:11) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'a' (mmult_accel.cpp:11) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'out' (mmult_accel.cpp:11) in dimension 2 completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 127.816 ; gain = 43.262
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 127.816 ; gain = 43.262
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mmult_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mmult_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 42.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 17.11 seconds; current allocated memory: 79.207 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.435 seconds; current allocated memory: 80.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mmult_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/a_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/b' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mmult_hw' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_hadd_16ns_16ns_16_5_full_dsp_1' to 'mmult_hw_hadd_16nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_hmul_16ns_16ns_16_4_max_dsp_1' to 'mmult_hw_hmul_16ncud' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'mmult_hw' is 14295 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_hadd_16nbkb': 49 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_hmul_16ncud': 49 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mmult_hw'.
+INFO: [HLS 200-111]  Elapsed time: 1.156 seconds; current allocated memory: 86.075 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:24 . Memory (MB): peak = 142.035 ; gain = 57.480
+INFO: [SYSC 207-301] Generating SystemC RTL for mmult_hw.
+INFO: [VHDL 208-304] Generating VHDL RTL for mmult_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for mmult_hw.
+INFO: [HLS 200-112] Total elapsed time: 24.115 seconds; peak allocated memory: 86.075 MB.
